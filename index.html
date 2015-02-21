@@ -18,11 +18,12 @@
           <ul id="todo-list">
 
             
-            <!-- The template loops over the controller's model property. -->
-            <!-- Because we don't need custom behavior for this controller yet, we can use the default object provided by the framework.  -->
+            <!-- // The template loops over the controller's model property. -->
+            <!-- // Because we don't need custom behavior for this controller yet, we can use the default object provided by the framework.  -->
+            <!-- // The bind code will apply the CSS class completed when the todo's isCompleted property is true and remove it when the property becomes false -->
 
             {{#each todo in model}}
-              <li>
+              <li {{bind-attr class="todo.isCompleted:completed"}}>
                 <input type="checkbox" class="toggle">
                 <label>{{todo.title}}</label><button class="destroy"></button>
               </li>
